@@ -1,0 +1,18 @@
+<div class="cat-list">
+    {{#each model as |cat|}}
+    {{#link-to 'cats.cat' cat}}
+        <div class="cat-single">
+
+                <h2>{{cat.name}}</h2>
+                <h2>{{cat.gender}}</h2>
+
+            <img src="{{cat.photo}}" class="little" alt="{{cat.title}}" />
+
+        </div>
+    {{/link-to}}    
+    {{/each}}
+</div>
+
+<aside>
+    {{outlet}}
+</aside>

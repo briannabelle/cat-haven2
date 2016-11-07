@@ -1,0 +1,44 @@
+
+<div class="info">
+	<p>
+		Name: {{model.name}}<br>
+		Gender: {{model.gender}}<br>
+		Age: {{model.age}}<br>
+		Breed: {{model.breed}}<br>
+		This kitty is
+		{{#if cat.isDesexed}}
+            not desexed yet,
+        {{else}}
+            desexed,
+        {{/if}}
+
+        {{#if cat.isWormed}}
+            has been wormed,
+        {{else}}
+            has not been wormed yet,
+        {{/if}}
+
+		{{#if cat.isWormed}}
+            not vaccinated,
+        {{else}}
+            fully vaccinated,
+        {{/if}}
+
+		{{#if cat.hasFIV }}
+            and has FIV.
+        {{else}}
+            and does not carry FIV.
+        {{/if}}<br>
+
+		Adoption Fee: ${{model.adoptionFee}}
+	</p>
+</div>
+
+
+<img src="{{model.photo}}" alt="{{model.name}}" /><br>
+
+<button {{action 'deleteCat'}}>Take this cat home</button><br><br>
+
+{{#link-to 'cats'}}
+    Back to the Pantry
+{{/link-to}}
